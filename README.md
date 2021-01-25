@@ -1,3 +1,9 @@
+# kafka and zeekeeper
+
+* kafka_2.12-2.5.0.tgz
+
+* apache-zookeeper-3.5.9-bin.tar.gz
+
 ## [How to launch a Kafka Cluster on your Laptop | Apache Kafka Series - Part 02](https://www.youtube.com/watch?v=gwrslUOSez8)
 
 ![](./images/01.png)
