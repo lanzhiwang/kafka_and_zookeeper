@@ -46,6 +46,8 @@ export CLIENT_JVMFLAGS="
 -Dzookeeper.ssl.trustStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.truststore.jks
 -Dzookeeper.ssl.trustStore.password=huzhi567233"
 
+export CLIENT_JVMFLAGS="${CLIENT_JVMFLAGS} -Djava.security.auth.login.config=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/zookeeper/conf/client_jaas.conf"
+
 "$JAVA" "-Dzookeeper.log.dir=${ZOO_LOG_DIR}" "-Dzookeeper.root.logger=${ZOO_LOG4J_PROP}" "-Dzookeeper.log.file=${ZOO_LOG_FILE}" \
      -cp "$CLASSPATH" $CLIENT_JVMFLAGS $JVMFLAGS \
      org.apache.zookeeper.ZooKeeperMain "$@"
