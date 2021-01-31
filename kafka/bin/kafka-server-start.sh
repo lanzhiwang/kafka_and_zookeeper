@@ -26,23 +26,25 @@ base_dir=$(dirname $0)
 # base_dir=./kafka/bin
 
 if [ "x$KAFKA_LOG4J_OPTS" = "x" ]; then
-    export KAFKA_LOG4J_OPTS="-Dlog4j.configuration=file:$base_dir/../config/log4j.properties -Dzookeeper.ssl.client.enable=true -Dzookeeper.clientCnxnSocket=org.apache.zookeeper.ClientCnxnSocketNetty -Dzookeeper.ssl.keyStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.keystore.jks -Dzookeeper.ssl.keyStore.password=huzhi567233 -Dzookeeper.ssl.trustStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.truststore.jks -Dzookeeper.ssl.trustStore.password=huzhi567233"
+    export KAFKA_LOG4J_OPTS="-Dlog4j.configuration=file:$base_dir/../config/log4j.properties -Dzookeeper.ssl.client.enable=true -Dzookeeper.clientCnxnSocket=org.apache.zookeeper.ClientCnxnSocketNetty -Dzookeeper.ssl.keyStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.keystore.jks -Dzookeeper.ssl.keyStore.password=huzhi567233 -Dzookeeper.ssl.trustStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.truststore.jks -Dzookeeper.ssl.trustStore.password=huzhi567233 -Djava.security.auth.login.config=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/kafka/config/kafka_server_jaas.conf -Dzookeeper.sasl.client=true -Dzookeeper.sasl.client.username=bob"
          # KAFKA_LOG4J_OPTS=-Dlog4j.configuration=file:./kafka/bin/../config/log4j.properties
 fi
 
-if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
-    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
-         # KAFKA_HEAP_OPTS='-Xmx1G -Xms1G'
-fi
-
-# export EXTRA_ARGS="
 # -Dzookeeper.ssl.client.enable=true
 # -Dzookeeper.clientCnxnSocket=org.apache.zookeeper.ClientCnxnSocketNetty
 # -Dzookeeper.ssl.keyStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.keystore.jks
 # -Dzookeeper.ssl.keyStore.password=huzhi567233
 # -Dzookeeper.ssl.trustStore.location=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/ssl/kafka.zookeeper-client.truststore.jks
 # -Dzookeeper.ssl.trustStore.password=huzhi567233
-# "
+
+# -Djava.security.auth.login.config=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/kafka/config/kafka_server_jaas.conf
+# -Dzookeeper.sasl.client=true
+# -Dzookeeper.sasl.client.username=bob
+
+if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
+    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
+         # KAFKA_HEAP_OPTS='-Xmx1G -Xms1G'
+fi
 
 EXTRA_ARGS=${EXTRA_ARGS-'-name kafkaServer -loggc'}
 # EXTRA_ARGS='-name kafkaServer -loggc'

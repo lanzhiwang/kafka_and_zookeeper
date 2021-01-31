@@ -75,6 +75,7 @@ else
     ZOOMAIN="org.apache.zookeeper.server.quorum.QuorumPeerMain"
 fi
 
+# zookeeper sasl jaas
 export SERVER_JVMFLAGS="-Djava.security.auth.login.config=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/zookeeper/conf/server_jaas.conf"
 
 if [ "x$SERVER_JVMFLAGS" != "x" ]
