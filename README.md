@@ -668,7 +668,10 @@ zookeeper.ssl.truststore.location = null
 zookeeper.ssl.truststore.password = null
 zookeeper.ssl.truststore.type = null
 zookeeper.sync.time.ms = 2000
-```
 
+
+mkdir data; mkdir -p data/broker-0 data/broker-1 data/broker-2 data/zookeeper-1 data/zookeeper-2 data/zookeeper-3; echo 1 > data/zookeeper-1/myid; echo 2 > data/zookeeper-2/myid; echo 3 > data/zookeeper-3/myid
+
+```
 
 
