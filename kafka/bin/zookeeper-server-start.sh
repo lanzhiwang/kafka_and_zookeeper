@@ -29,6 +29,8 @@ if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
     export KAFKA_HEAP_OPTS="-Xmx512M -Xms512M"
 fi
 
+# export KAFKA_OPTS="-Djava.security.auth.login.config=/Users/huzhi/work/code/go_code/kafka_and_zookeeper/kafka/config/kafka_server_jaas.conf -Dzookeeper.authProvider.1=org.apache.zookeeper.server.auth.SASLAuthenticationProvider -Dzookeeper.requireClientAuthScheme=sasl"
+
 EXTRA_ARGS=${EXTRA_ARGS-'-name zookeeper -loggc'}
 
 COMMAND=$1
